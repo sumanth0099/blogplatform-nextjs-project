@@ -1,4 +1,3 @@
-```markdown
 # Next.js Blog Platform
 
 A static, SEO-friendly blog platform built using Next.js with MDX support and modern web development best practices.

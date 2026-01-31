@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>My Next.js Blog</title>
+    <link>http://localhost:3000</link>
+    <description>A high-performance blog platform built with Next.js</description>
+    <language>en</language>
+    <lastBuildDate>Fri, 30 Jan 2026 00:56:28 GMT</lastBuildDate>
+    <atom:link href="http://localhost:3000/rss.xml" rel="self" type="application/rss+xml"/>
+    
+    <item>
+      <title>Sample Blog Post 15</title>
+      <link>http://localhost:3000/posts/post-15</link>
+      <description>This is a sample blog post number 15 to demonstrate pagination functionality.</description>
+      <author>Author Name</author>
+      <pubDate>Tue, 20 Feb 2024 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">http://localhost:3000/posts/post-15</guid>
+    </item>
+    <item>
+      <title>Sample Blog Post 14</title>
+      <link>http://localhost:3000/posts/post-14</link>
+      <description>This is a sample blog post number 14 to demonstrate pagination functionality.</description>
+      <author>Author Name</author>
+      <pubDate>Mon, 19 Feb 2024 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">http://localhost:3000/posts/post-14</guid>
+    </item>
+    <item>
+      <title>Sample Blog Post 13</title>
+      <link>http://localhost:3000/posts/post-13</link>
+      <description>This is a sample blog post number 13 to demonstrate pagination functionality.</description>
+      <author>Author Name</author>
+      <pubDate>Sun, 18 Feb 2024 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">http://localhost:3000/posts/post-13</guid>
+    </item>
+    <item>
+      <title>Sample Blog Post 12</title>
+      <link>http://localhost:3000/posts/post-12</link>
+      <description>This is a sample blog post number 12 to demonstrate pagination functionality.</description>
+      <author>Author Name</author>
+      <pubDate>Sat, 17 Feb 2024 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">http://localhost:3000/posts/post-12</guid>
+    </item>
+    <item>
+      <title>Sample Blog Post 11</title>
+      <link>http://localhost:3000/posts/post-11</link>
+      <description>This is a sample blog post number 11 to demonstrate pagination functionality.</description>
+      <author>Author Name</author>
+      <pubDate>Fri, 16 Feb 2024 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">http://localhost:3000/posts/post-11</guid>
+    </item>
+    <item>
+      <title>Sample Blog Post 10</title>
+      <link>http://localhost:3000/posts/post-10</link>
+      <description>This is a sample blog post number 10 to demonstrate pagination functionality.</description>
+      <author>Author Name</author>
+      <pubDate>Thu, 15 Feb 2024 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">http://localhost:3000/posts/post-10</guid>
+    </item>
+    <item>
+      <title>Sample Blog Post 9</title>
+      <link>http://localhost:3000/posts/post-9</link>
+      <description>This is a sample blog post number 9 to demonstrate pagination functionality.</description>
+      <author>Author Name</author>
+      <pubDate>Wed, 14 Feb 2024 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">http://localhost:3000/posts/post-9</guid>
+    </item>
+    <item>
+      <title>Sample Blog Post 8</title>
+      <link>http://localhost:3000/posts/post-8</link>
+      <description>This is a sample blog post number 8 to demonstrate pagination functionality.</description>
+      <author>Author Name</author>
+      <pubDate>Tue, 13 Feb 2024 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">http://localhost:3000/posts/post-8</guid>
+    </item>
+    <item>
+      <title>Sample Blog Post 7</title>
+      <link>http://localhost:3000/posts/post-7</link>
+      <description>This is a sample blog post number 7 to demonstrate pagination functionality.</description>
+      <author>Author Name</author>
+      <pubDate>Mon, 12 Feb 2024 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">http://localhost:3000/posts/post-7</guid>
+    </item>
+    <item>
+      <title>Introduction to TypeScript</title>
+      <link>http://localhost:3000/posts/introduction-to-typescript</link>
+      <description>Discover how TypeScript can help you write more robust and maintainable JavaScript applications.</description>
+      <author>Alex Chen</author>
+      <pubDate>Sat, 10 Feb 2024 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">http://localhost:3000/posts/introduction-to-typescript</guid>
+    </item>
+    <item>
+      <title>Modern CSS Techniques</title>
+      <link>http://localhost:3000/posts/modern-css-techniques</link>
+      <description>Explore modern CSS features and techniques that will elevate your web design skills.</description>
+      <author>Emma Davis</author>
+      <pubDate>Mon, 05 Feb 2024 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">http://localhost:3000/posts/modern-css-techniques</guid>
+    </item>
+    <item>
+      <title>Mastering React Hooks</title>
+      <link>http://localhost:3000/posts/mastering-react-hooks</link>
+      <description>Learn how to effectively use React Hooks to build powerful and maintainable React applications.</description>
+      <author>Sarah Williams</author>
+      <pubDate>Thu, 01 Feb 2024 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">http://localhost:3000/posts/mastering-react-hooks</guid>
+    </item>
+    <item>
+      <title>Building SEO-Friendly Websites</title>
+      <link>http://localhost:3000/posts/building-seo-friendly-websites</link>
+      <description>Master the art of building search engine optimized websites with modern techniques and tools.</description>
+      <author>Mike Johnson</author>
+      <pubDate>Thu, 25 Jan 2024 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">http://localhost:3000/posts/building-seo-friendly-websites</guid>
+    </item>
+    <item>
+      <title>Understanding Static Site Generation</title>
+      <link>http://localhost:3000/posts/understanding-static-site-generation</link>
+      <description>Dive deep into Static Site Generation and learn how it can dramatically improve your website performance.</description>
+      <author>Jane Smith</author>
+      <pubDate>Sat, 20 Jan 2024 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">http://localhost:3000/posts/understanding-static-site-generation</guid>
+    </item>
+    <item>
+      <title>Getting Started with Next.js</title>
+      <link>http://localhost:3000/posts/getting-started-with-nextjs</link>
+      <description>Learn how to build modern web applications with Next.js, the React framework for production.</description>
+      <author>John Doe</author>
+      <pubDate>Mon, 15 Jan 2024 00:00:00 GMT</pubDate>
+      <guid isPermaLink="true">http://localhost:3000/posts/getting-started-with-nextjs</guid>
+    </item>
+  </channel>
+</rss>

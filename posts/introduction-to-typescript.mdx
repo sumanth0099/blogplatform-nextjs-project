@@ -1,0 +1,94 @@
+---
+title: 'Introduction to TypeScript'
+date: '2024-02-10'
+author: 'Alex Chen'
+tags: ['TypeScript', 'JavaScript', 'Programming']
+excerpt: 'Discover how TypeScript can help you write more robust and maintainable JavaScript applications.'
+---
+
+## What is TypeScript?
+
+TypeScript is a strongly typed programming language that builds on JavaScript, giving you better tooling at any scale.
+
+### Key Benefits
+
+- **Type Safety**: Catch errors at compile time
+- **Better IDE Support**: Improved autocomplete and refactoring
+- **Self-Documenting**: Types serve as documentation
+- **Gradual Adoption**: Use TypeScript alongside JavaScript
+
+## Basic Types
+``````typescript
+// Primitive types
+let name: string = "John"
+let age: number = 30
+let isActive: boolean = true
+
+// Arrays
+let numbers: number[] = [1, 2, 3]
+let names: Array<string> = ["John", "Jane"]
+
+// Objects
+let user: {
+  name: string
+  age: number
+} = {
+  name: "John",
+  age: 30
+}
+``````
+
+## Interfaces
+
+Define contracts for your objects:
+``````typescript
+interface User {
+  id: number
+  name: string
+  email: string
+  age?: number // Optional property
+}
+
+function greetUser(user: User) {
+  console.log(`Hello, ${user.name}!`)
+}
+``````
+
+## Type Aliases
+
+Create reusable type definitions:
+``````typescript
+type ID = string | number
+
+type User = {
+  id: ID
+  name: string
+}
+
+type AdminUser = User & {
+  permissions: string[]
+}
+``````
+
+## Generics
+
+Write flexible, reusable code:
+``````typescript
+function identity<T>(arg: T): T {
+  return arg
+}
+
+let output1 = identity<string>("hello")
+let output2 = identity<number>(42)
+
+// Generic interfaces
+interface ApiResponse<T> {
+  data: T
+  status: number
+  message: string
+}
+``````
+
+## Conclusion
+
+TypeScript enhances JavaScript development with type safety and better tooling, making it easier to build large-scale applications.

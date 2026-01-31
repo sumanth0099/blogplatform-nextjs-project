@@ -1,0 +1,163 @@
+---
+title: 'Building SEO-Friendly Websites'
+date: '2024-01-25'
+author: 'Mike Johnson'
+tags: ['SEO', 'Web Development', 'Best Practices']
+excerpt: 'Master the art of building search engine optimized websites with modern techniques and tools.'
+---
+
+## The Importance of SEO
+
+Search Engine Optimization (SEO) is crucial for any website that wants to be discovered online. Good SEO practices ensure that search engines can find, crawl, and index your content effectively.
+
+### Core SEO Principles
+
+1. **Quality Content**: Create valuable, relevant content
+2. **Technical Optimization**: Ensure your site is technically sound
+3. **User Experience**: Make your site fast and easy to use
+4. **Mobile Responsiveness**: Optimize for all devices
+
+## Essential Meta Tags
+
+Every page should have proper meta tags:
+``````html
+<head>
+  <title>Your Page Title</title>
+  <meta name="description" content="Page description here" />
+  <meta property="og:title" content="Open Graph Title" />
+  <meta property="og:description" content="OG Description" />
+  <meta property="og:image" content="/image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+</head>
+``````
+
+## Using next-seo
+
+The `next-seo` package makes managing SEO in Next.js easy:
+``````javascript
+import { NextSeo } from 'next-seo'
+
+export default function Page() {
+  return (
+    <>
+      <NextSeo
+        title="My Amazing Page"
+        description="This is an amazing page"
+        openGraph={{
+          type: 'website',
+          url: 'https://example.com',
+          title: 'My Amazing Page',
+          description: 'This is an amazing page',
+          images: [
+            {
+              url: 'https://example.com/image.jpg',
+              width: 800,
+              height: 600,
+              alt: 'Og Image Alt',
+            },
+          ],
+        }}
+      />
+      <h1>Page Content</h1>
+    </>
+  )
+}
+``````
+
+## Sitemaps and RSS Feeds
+
+### Creating a Sitemap
+
+Generate a sitemap.xml to help search engines discover your content:
+``````javascript
+function generateSiteMap(posts) {
+  return `<?xml version="1.0" encoding="UTF-8"?>
+   <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+     <url>
+       <loc>https://example.com</loc>
+     </url>
+     ${posts.map(post => {
+       return `
+       <url>
+           <loc>${`https://example.com/posts/${post.slug}`}</loc>
+       </url>
+     `
+     }).join('')}
+   </urlset>
+ `
+}
+``````
+
+### RSS Feeds
+
+Provide an RSS feed for subscribers:
+``````xml
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+  <channel>
+    <title>My Blog</title>
+    <link>https://example.com</link>
+    <description>Blog description</description>
+    <item>
+      <title>Post Title</title>
+      <link>https://example.com/post</link>
+      <description>Post description</description>
+    </item>
+  </channel>
+</rss>
+``````
+
+## Performance Optimization
+
+### Image Optimization
+
+Use Next.js Image component:
+``````javascript
+import Image from 'next/image'
+
+<Image
+  src="/hero.jpg"
+  alt="Hero image"
+  width={1200}
+  height={600}
+  priority
+/>
+``````
+
+### Code Splitting
+
+Next.js automatically splits your code:
+``````javascript
+import dynamic from 'next/dynamic'
+
+const DynamicComponent = dynamic(() => import('../components/Heavy'))
+``````
+
+## Structured Data
+
+Add structured data for rich snippets:
+``````json
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Article headline",
+  "image": "https://example.com/image.jpg",
+  "author": {
+    "@type": "Person",
+    "name": "John Doe"
+  },
+  "datePublished": "2024-01-25"
+}
+``````
+
+## Monitoring and Analytics
+
+Track your SEO performance with:
+
+- **Google Search Console**: Monitor search performance
+- **Google Analytics**: Track user behavior
+- **Lighthouse**: Audit site performance
+
+## Conclusion
+
+Building SEO-friendly websites requires attention to technical details, quality content, and user experience. With the right tools and practices, you can create sites that rank well and serve users effectively.

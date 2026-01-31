@@ -1,7 +1,7 @@
-# 📘 Next.js Blog Platform
+#  Next.js Blog Platform
 *A static, SEO-friendly blog system built with Next.js, MDX, and modern web best practices.*
 ---
-## 📌 Overview
+##  Overview
 This project is a **high-performance blog platform** built using **Next.js (Pages Router)**.
 It uses **Static Site Generation (SSG)** to pre-render pages at build time, ensuring fast load speeds, strong SEO, and excellent scalability.
 Blog content is written using **MDX**, allowing Markdown with embedded React components.
@@ -91,7 +91,7 @@ Open: **[http://localhost:3000](http://localhost:3000)**
 
 ---
 
-### 🔹 Production Build (Without Docker)
+###  Production Build (Without Docker)
 
 ```bash
 npm run build
@@ -106,7 +106,7 @@ During build:
 
 ---
 
-### 🔹 Docker Deployment 
+###  Docker Deployment 
 
 ```bash
 docker-compose up --build -d
@@ -124,7 +124,7 @@ Access: **[http://localhost:3000](http://localhost:3000)**
 
 ---
 
-## 📄 Available Routes
+##  Available Routes
 
 | Route           | Description             |
 | --------------- | ----------------------- |
@@ -138,7 +138,7 @@ Access: **[http://localhost:3000](http://localhost:3000)**
 
 ---
 
-## 📝 Writing Blog Posts
+##  Writing Blog Posts
 
 All posts are stored in `/posts` as `.mdx` files.
 
@@ -188,7 +188,7 @@ Images are automatically optimized by Next.js.
 
 ---
 
-## 🎨 Theme Customization
+##  Theme Customization
 
 Edit `/src/styles/globals.css`:
 
@@ -206,7 +206,7 @@ Edit `/src/styles/globals.css`:
 
 ---
 
-## 🔍 SEO Capabilities
+##  SEO Capabilities
 
 * Dynamic title & meta descriptions
 * Open Graph & Twitter Cards
@@ -216,7 +216,7 @@ Edit `/src/styles/globals.css`:
 
 ---
 
-## 🧪 Testing Support
+##  Testing Support
 
 The project includes `data-testid` attributes for easy testing, such as:
 
@@ -228,7 +228,7 @@ The project includes `data-testid` attributes for easy testing, such as:
 
 ---
 
-## 🌍 Environment Variables
+##  Environment Variables
 
 Defined in `.env.example`:
 
@@ -242,7 +242,7 @@ SITE_DESCRIPTION=A modern static blog platform
 
 ---
 
-## 📈 Performance Highlights
+## Performance Highlights
 
 * All pages pre-rendered at build time
 * Optimized images and code splitting

@@ -1,43 +1,51 @@
-#  Next.js Blog Platform
-*A static, SEO-friendly blog system built with Next.js, MDX, and modern web best practices.*
+```markdown
+# Next.js Blog Platform
+
+A static, SEO-friendly blog platform built using Next.js with MDX support and modern web development best practices.
+
 ---
-##  Overview
-This project is a **high-performance blog platform** built using **Next.js (Pages Router)**.
-It uses **Static Site Generation (SSG)** to pre-render pages at build time, ensuring fast load speeds, strong SEO, and excellent scalability.
-Blog content is written using **MDX**, allowing Markdown with embedded React components.
+
+## Overview
+
+This project is a high-performance blog platform developed using **Next.js (Pages Router)**.  
+It leverages **Static Site Generation (SSG)** to pre-render pages at build time, resulting in fast load times, improved SEO, and better scalability.
+
+Blog content is written using **MDX**, which allows Markdown files to include React components.
 
 ---
 
 ## Key Features
-*  **Static Site Generation (SSG)** for fast performance
-*  **MDX-based content system** (Markdown + JSX)
-*  **SEO-ready** (meta tags, Open Graph, Twitter Cards)
-*  **Automatic sitemap & RSS feed generation**
-*  **Dark / Light theme toggle** with saved preference
-*  **Fully responsive design**
-*  **Paginated blog listing** (10 posts per page)
-*  **Reading time calculation** for posts
-*  **Next.js Image optimization**
-*  **Docker & Docker Compose support**
-*  **Code syntax highlighting** using Prism.js
+
+- Static Site Generation (SSG)
+- MDX-based blog content
+- SEO optimization (meta tags, Open Graph, Twitter Cards)
+- Automatic sitemap and RSS feed generation
+- Dark / Light theme toggle with persistence
+- Fully responsive design
+- Paginated blog listing (10 posts per page)
+- Reading time calculation
+- Next.js Image optimization
+- Code syntax highlighting with Prism.js
+- Docker and Docker Compose support
 
 ---
 
-##  Project Structure
+## Project Structure
 
 ```
+
 blog-platform/
-├── posts/                      # MDX blog posts (15 posts)
+├── posts/                      # MDX blog posts
 ├── public/
-│   ├── images/                 # Static images
-│   ├── sitemap.xml             # Generated sitemap
-│   └── rss.xml                 # Generated RSS feed
+│   ├── images/
+│   ├── sitemap.xml
+│   └── rss.xml
 ├── scripts/
 │   ├── generate-sitemap.js
 │   └── generate-rss.js
 ├── src/
 │   ├── components/             # Reusable React components
-│   ├── lib/                    # Post utilities and helpers
+│   ├── lib/                    # Post utilities
 │   ├── pages/                  # Next.js pages
 │   └── styles/                 # Global and Prism styles
 ├── .env.example
@@ -47,32 +55,29 @@ blog-platform/
 ├── next.config.js
 ├── package.json
 └── README.md
-```
+
+````
 
 ---
 
-## 🛠️ Technology Stack
+## Technology Stack
 
-| Category          | Tools                     |
-| ----------------- | ------------------------- |
-| Framework         | Next.js 14 (Pages Router) |
-| Language          | JavaScript (ES6+)         |
-| Styling           | Plain CSS + CSS Variables |
-| Content           | MDX                       |
-| SEO               | next-seo                  |
-| Code Highlighting | Prism.js                  |
-| Containerization  | Docker & Docker Compose   |
-| Runtime           | Node.js 18                |
+- Framework: Next.js 14 (Pages Router)
+- Language: JavaScript (ES6+)
+- Styling: Plain CSS with CSS Variables
+- Content: MDX
+- SEO: next-seo
+- Code Highlighting: Prism.js
+- Containerization: Docker & Docker Compose
+- Runtime: Node.js 18
 
 ---
 
 ## Prerequisites
 
-Make sure you have:
-
-* Node.js **v18+**
-* npm
-* Docker & Docker Compose
+- Node.js 18 or higher
+- npm
+- Docker and Docker Compose
 
 ---
 
@@ -85,28 +90,24 @@ git clone https://github.com/sumanth0099/blogplatform-nextjs-project.git
 cd blogplatform-nextjs-project
 npm install
 npm run dev
-```
+````
 
-Open: **[http://localhost:3000](http://localhost:3000)**
+Open: [http://localhost:3000]
 
 ---
 
-###  Production Build (Without Docker)
+### Production Build (Without Docker)
 
 ```bash
 npm run build
 npm start
 ```
 
-During build:
-
-* Static pages are generated
-* Sitemap is created
-* RSS feed is generated
+This generates static pages, sitemap, and RSS feed.
 
 ---
 
-###  Docker Deployment 
+### Docker Deployment
 
 ```bash
 docker-compose up --build -d
@@ -120,29 +121,25 @@ docker-compose logs -f web
 docker-compose down
 ```
 
-Access: **[http://localhost:3000](http://localhost:3000)**
+---
+
+## Available Routes
+
+* `/` – Homepage
+* `/blog/1` – Blog listing page
+* `/blog/2` – Additional pages (pagination)
+* `/posts/[slug]` – Individual blog post
+* `/sitemap.xml` – Sitemap
+* `/rss.xml` – RSS feed
+* `/*` – Custom 404 page
 
 ---
 
-##  Available Routes
+## Creating Blog Posts
 
-| Route           | Description             |
-| --------------- | ----------------------- |
-| `/`             | Homepage (latest posts) |
-| `/blog/1`       | Blog listing (page 1)   |
-| `/blog/2`       | Blog listing (page 2+)  |
-| `/posts/[slug]` | Individual blog post    |
-| `/sitemap.xml`  | XML sitemap             |
-| `/rss.xml`      | RSS feed                |
-| `/*`            | Custom 404 page         |
+All blog posts are stored in the `/posts` directory as `.mdx` files.
 
----
-
-##  Writing Blog Posts
-
-All posts are stored in `/posts` as `.mdx` files.
-
-### Example MDX Format
+### Example MDX File
 
 ```mdx
 ---
@@ -153,9 +150,9 @@ tags: ["Next.js", "SEO"]
 excerpt: "Short summary for previews and SEO."
 ---
 
-## Content Starts Here
+## Post Content
 
-Write using Markdown syntax.
+Write your content using Markdown syntax.
 ```
 
 ---
@@ -172,13 +169,7 @@ function greet() {
 
 ### Adding Images
 
-Place images in:
-
-```
-/public/images/
-```
-
-Use in MDX:
+Place images in `/public/images/` and reference them in MDX:
 
 ```mdx
 ![Alt text](/images/example.jpg)
@@ -188,7 +179,7 @@ Images are automatically optimized by Next.js.
 
 ---
 
-##  Theme Customization
+## Theme Customization
 
 Edit `/src/styles/globals.css`:
 
@@ -206,19 +197,19 @@ Edit `/src/styles/globals.css`:
 
 ---
 
-##  SEO Capabilities
+## SEO Features
 
-* Dynamic title & meta descriptions
-* Open Graph & Twitter Cards
+* Dynamic meta tags
+* Open Graph and Twitter Cards
 * Canonical URLs
 * Auto-generated sitemap
 * Auto-generated RSS feed
 
 ---
 
-##  Testing Support
+## Testing Support
 
-The project includes `data-testid` attributes for easy testing, such as:
+The application includes `data-testid` attributes such as:
 
 * `post-list`
 * `post-card-{slug}`
@@ -228,7 +219,7 @@ The project includes `data-testid` attributes for easy testing, such as:
 
 ---
 
-##  Environment Variables
+## Environment Variables
 
 Defined in `.env.example`:
 
@@ -242,16 +233,14 @@ SITE_DESCRIPTION=A modern static blog platform
 
 ---
 
-## Performance Highlights
+## Performance
 
-* All pages pre-rendered at build time
+* Static pages generated at build time
 * Optimized images and code splitting
-* Minimal CSS, no heavy frameworks
+* Lightweight CSS without frameworks
 
 ---
 
-## 👤 Author
+## Author
 
-**Tetala Sumanth Reddy**
-
----
+Tetala Sumanth Reddy

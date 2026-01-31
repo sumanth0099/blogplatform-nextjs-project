@@ -72,7 +72,7 @@ Make sure you have:
 
 * Node.js **v18+**
 * npm
-* (Optional) Docker & Docker Compose
+* Docker & Docker Compose
 
 ---
 

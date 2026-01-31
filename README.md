@@ -32,7 +32,7 @@ Blog content is written using **MDX**, which allows Markdown files to include Re
 
 ## Project Structure
 
-```
+```bash
 
 blog-platform/
 ├── posts/                      # MDX blog posts

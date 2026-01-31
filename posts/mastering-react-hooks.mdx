@@ -1,0 +1,221 @@
+---
+title: 'Mastering React Hooks'
+date: '2024-02-01'
+author: 'Sarah Williams'
+tags: ['React', 'JavaScript', 'Hooks']
+excerpt: 'Learn how to effectively use React Hooks to build powerful and maintainable React applications.'
+---
+
+## Introduction to React Hooks
+
+React Hooks revolutionized how we write React components by allowing us to use state and other React features without writing a class.
+
+### Why Hooks?
+
+Before Hooks, we had several problems:
+
+- Complex components became hard to understand
+- Reusing stateful logic was difficult
+- Classes were confusing
+
+## Essential Hooks
+
+### useState
+
+Manage state in functional components:
+``````javascript
+import { useState } from 'react'
+
+function Counter() {
+  const [count, setCount] = useState(0)
+  
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={() => setCount(count + 1)}>
+        Increment
+      </button>
+    </div>
+  )
+}
+``````
+
+### useEffect
+
+Handle side effects in your components:
+``````javascript
+import { useEffect, useState } from 'react'
+
+function DataFetcher() {
+  const [data, setData] = useState(null)
+  
+  useEffect(() => {
+    fetch('/api/data')
+      .then(res => res.json())
+      .then(setData)
+  }, []) // Empty array means run once
+  
+  return <div>{data?.title}</div>
+}
+``````
+
+### useContext
+
+Share data without prop drilling:
+``````javascript
+import { createContext, useContext } from 'react'
+
+const ThemeContext = createContext('light')
+
+function ThemedButton() {
+  const theme = useContext(ThemeContext)
+  return <button className={theme}>Click me</button>
+}
+``````
+
+## Advanced Hooks
+
+### useReducer
+
+Manage complex state logic:
+``````javascript
+import { useReducer } from 'react'
+
+const initialState = { count: 0 }
+
+function reducer(state, action) {
+  switch (action.type) {
+    case 'increment':
+      return { count: state.count + 1 }
+    case 'decrement':
+      return { count: state.count - 1 }
+    default:
+      return state
+  }
+}
+
+function Counter() {
+  const [state, dispatch] = useReducer(reducer, initialState)
+  
+  return (
+    <div>
+      Count: {state.count}
+      <button onClick={() => dispatch({ type: 'increment' })}>
+        +
+      </button>
+    </div>
+  )
+}
+``````
+
+### useMemo
+
+Optimize expensive calculations:
+``````javascript
+import { useMemo } from 'react'
+
+function ExpensiveComponent({ items }) {
+  const total = useMemo(() => {
+    return items.reduce((sum, item) => sum + item.price, 0)
+  }, [items])
+  
+  return <div>Total: ${total}</div>
+}
+``````
+
+### useCallback
+
+Memoize callback functions:
+``````javascript
+import { useCallback } from 'react'
+
+function ParentComponent() {
+  const handleClick = useCallback(() => {
+    console.log('Button clicked')
+  }, [])
+  
+  return <ChildComponent onClick={handleClick} />
+}
+``````
+
+## Custom Hooks
+
+Create reusable logic with custom hooks:
+``````javascript
+function useLocalStorage(key, initialValue) {
+  const [value, setValue] = useState(() => {
+    const item = localStorage.getItem(key)
+    return item ? JSON.parse(item) : initialValue
+  })
+  
+  const setStoredValue = (newValue) => {
+    setValue(newValue)
+    localStorage.setItem(key, JSON.stringify(newValue))
+  }
+  
+  return [value, setStoredValue]
+}
+
+// Usage
+function App() {
+  const [name, setName] = useLocalStorage('name', 'Anonymous')
+  
+  return (
+    <input
+      value={name}
+      onChange={(e) => setName(e.target.value)}
+    />
+  )
+}
+``````
+
+## Best Practices
+
+1. **Only call hooks at the top level**: Don't call hooks inside loops or conditions
+2. **Only call hooks from React functions**: Use them in components or custom hooks
+3. **Use the ESLint plugin**: Install `eslint-plugin-react-hooks` for helpful warnings
+4. **Keep effects focused**: Split unrelated logic into separate effects
+
+## Common Pitfalls
+
+### Infinite Loops
+
+Be careful with dependencies:
+``````javascript
+// ❌ Bad: Creates infinite loop
+useEffect(() => {
+  setCount(count + 1)
+}) // No dependency array
+
+// ✅ Good: Runs only when needed
+useEffect(() => {
+  // Effect code
+}, [dependency])
+``````
+
+### Stale Closures
+
+Update functions properly:
+``````javascript
+// ❌ Bad: Stale closure
+const [count, setCount] = useState(0)
+
+useEffect(() => {
+  const timer = setInterval(() => {
+    setCount(count + 1) // Always uses initial count
+  }, 1000)
+  return () => clearInterval(timer)
+}, [])
+
+// ✅ Good: Functional update
+useEffect(() => {
+  const timer = setInterval(() => {
+    setCount(c => c + 1) // Uses current count
+  }, 1000)
+  return () => clearInterval(timer)
+}, [])
+``````
+
+## Conclusion
+
+React Hooks provide a powerful way to add state and side effects to functional components. By mastering these patterns, you can write cleaner, more maintainable React code.
